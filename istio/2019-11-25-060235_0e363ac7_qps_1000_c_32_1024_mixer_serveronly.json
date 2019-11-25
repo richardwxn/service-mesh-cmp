@@ -1,0 +1,192 @@
+{
+  "RunType": "HTTP",
+  "Labels": "0e363ac7_qps_1000_c_32_1024_mixer_serveronly",
+  "StartTime": "2019-11-25T06:02:35.869591121Z",
+  "RequestedQPS": "1000",
+  "RequestedDuration": "4m0s",
+  "ActualQPS": 999.9847412578328,
+  "ActualDuration": 240003662154,
+  "NumThreads": 32,
+  "Version": "1.3.1",
+  "DurationHistogram": {
+    "Count": 240000,
+    "Min": 0.000824624,
+    "Max": 0.009978829,
+    "Sum": 721.0442479399998,
+    "Avg": 0.0030043510330833322,
+    "StdDev": 0.0012051060875389662,
+    "Data": [
+      {
+        "Start": 0.000824624,
+        "End": 0.0009000000000000001,
+        "Percent": 0.0008333333333333334,
+        "Count": 2
+      },
+      {
+        "Start": 0.0009000000000000001,
+        "End": 0.001,
+        "Percent": 0.0020833333333333333,
+        "Count": 3
+      },
+      {
+        "Start": 0.001,
+        "End": 0.00125,
+        "Percent": 0.0175,
+        "Count": 37
+      },
+      {
+        "Start": 0.00125,
+        "End": 0.0015,
+        "Percent": 1.0325,
+        "Count": 2436
+      },
+      {
+        "Start": 0.0015,
+        "End": 0.00175,
+        "Percent": 4.685,
+        "Count": 8766
+      },
+      {
+        "Start": 0.00175,
+        "End": 0.002,
+        "Percent": 12.789583333333333,
+        "Count": 19451
+      },
+      {
+        "Start": 0.002,
+        "End": 0.0022500000000000003,
+        "Percent": 26.632916666666667,
+        "Count": 33224
+      },
+      {
+        "Start": 0.0022500000000000003,
+        "End": 0.0025,
+        "Percent": 37.93666666666667,
+        "Count": 27129
+      },
+      {
+        "Start": 0.0025,
+        "End": 0.003,
+        "Percent": 62.30041666666666,
+        "Count": 58473
+      },
+      {
+        "Start": 0.003,
+        "End": 0.0035,
+        "Percent": 83.23875,
+        "Count": 50252
+      },
+      {
+        "Start": 0.0035,
+        "End": 0.004,
+        "Percent": 88.77041666666666,
+        "Count": 13276
+      },
+      {
+        "Start": 0.004,
+        "End": 0.0045000000000000005,
+        "Percent": 90.17458333333333,
+        "Count": 3370
+      },
+      {
+        "Start": 0.0045000000000000005,
+        "End": 0.005,
+        "Percent": 90.47,
+        "Count": 709
+      },
+      {
+        "Start": 0.005,
+        "End": 0.006,
+        "Percent": 93.985,
+        "Count": 8436
+      },
+      {
+        "Start": 0.006,
+        "End": 0.007,
+        "Percent": 99.14125,
+        "Count": 12375
+      },
+      {
+        "Start": 0.007,
+        "End": 0.008,
+        "Percent": 99.85708333333334,
+        "Count": 1718
+      },
+      {
+        "Start": 0.008,
+        "End": 0.009000000000000001,
+        "Percent": 99.97416666666666,
+        "Count": 281
+      },
+      {
+        "Start": 0.009000000000000001,
+        "End": 0.009978829,
+        "Percent": 100,
+        "Count": 62
+      }
+    ],
+    "Percentiles": [
+      {
+        "Percentile": 50,
+        "Value": 0.0027475672532621897
+      },
+      {
+        "Percentile": 75,
+        "Value": 0.0033032615617288865
+      },
+      {
+        "Percentile": 90,
+        "Value": 0.004437833827893176
+      },
+      {
+        "Percentile": 99,
+        "Value": 0.006972606060606061
+      },
+      {
+        "Percentile": 99.9,
+        "Value": 0.00836654804270468
+      }
+    ]
+  },
+  "Exactly": 0,
+  "RetCodes": {
+    "200": 240000
+  },
+  "Sizes": {
+    "Count": 240000,
+    "Min": 1279,
+    "Max": 1279,
+    "Sum": 306960000,
+    "Avg": 1279,
+    "StdDev": 0,
+    "Data": [
+      {
+        "Start": 1279,
+        "End": 1279,
+        "Percent": 100,
+        "Count": 240000
+      }
+    ],
+    "Percentiles": null
+  },
+  "HeaderSizes": {
+    "Count": 240000,
+    "Min": 255,
+    "Max": 255,
+    "Sum": 61200000,
+    "Avg": 255,
+    "StdDev": 0,
+    "Data": [
+      {
+        "Start": 255,
+        "End": 255,
+        "Percent": 100,
+        "Count": 240000
+      }
+    ],
+    "Percentiles": null
+  },
+  "URL": "http://10.4.3.13:8080/echo?size=1024",
+  "SocketCount": 32,
+  "AbortOn": 0
+}
