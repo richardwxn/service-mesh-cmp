@@ -19,15 +19,20 @@ def parse_fortio_json(file_name):
     num_threads = str(obj['NumThreads'])
     actual_QPS = str(math.ceil(obj['ActualQPS']))
     percentiles = obj['DurationHistogram']['Percentiles']
-    p50 = round(percentiles[0]['Value'] * 1000, 3)  # ms
-    p90 = round(percentiles[2]['Value'] * 1000, 3)
-    p99 = round(percentiles[3]['Value'] * 1000, 3)
+    if "nighthawk" in file_name:
+        p50 = round(percentiles[0]['Value'] * 1000, 3)  # ms
+        p90 = round(percentiles[3]['Value'] * 1000, 3)
+        p99 = round(percentiles[5]['Value'] * 1000, 3)
+    else:
+        p50 = round(percentiles[0]['Value'] * 1000, 3)  # ms
+        p90 = round(percentiles[2]['Value'] * 1000, 3)
+        p99 = round(percentiles[3]['Value'] * 1000, 3)
     perf_row_list = [start_time, actual_duration, labels, num_threads, actual_QPS, p50, p90, p99]
     return perf_row_list
 
 
 def write_perf_number_to_csv(perf_num_list):
-    with open('nighthawk_test.csv', 'w', newline='') as file:
+    with open('nighthawk.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['StartTime', 'ActualDuration', 'Labels', 'NumThreads', 'ActualQPS', 'p50', 'p90', 'p99'])
         for lst in perf_num_list:
