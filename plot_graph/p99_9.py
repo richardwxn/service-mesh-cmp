@@ -3,16 +3,16 @@ import matplotlib.pyplot as plt
 x = [2, 4, 8, 16, 32, 64]
 
 
-def draw_p99(latency_p99_list):
-    y1 = latency_p99_list[0]
-    y2 = latency_p99_list[1]
-    y3 = latency_p99_list[2]
+def draw_p99_9(latency_p99_9_list):
+    y1 = latency_p99_9_list[0]
+    y2 = latency_p99_9_list[1]
+    y3 = latency_p99_9_list[2]
 
-    y4 = latency_p99_list[3]
-    y5 = latency_p99_list[4]
+    y4 = latency_p99_9_list[3]
+    y5 = latency_p99_9_list[4]
 
-    y6 = latency_p99_list[5]
-    y7 = latency_p99_list[6]
+    y6 = latency_p99_9_list[5]
+    y7 = latency_p99_9_list[6]
 
     dpi = 100
     plt.figure(figsize=(1138/dpi, 871/dpi), dpi=dpi)
@@ -56,12 +56,12 @@ def draw_p99(latency_p99_list):
     for a, b in zip(x, y7):
         plt.text(a, b, str(b))
 
-    title = "nighthawk_without_jitter_p99"
+    title = ""
     plt.title(title + ' 1000QPS over 240 seconds')
     plt.ylabel('latency,milliseconds')
     plt.xlabel('connections')
     plt.legend()
-    plt.axis([0, 68, 0, 12])
+    plt.axis([0, 68, 0, 13.0000])
 
     plt.savefig(title + ".png", dpi=dpi)
     plt.show()
