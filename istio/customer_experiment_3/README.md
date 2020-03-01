@@ -96,7 +96,7 @@ fortioserver-5fd8b9c87f-sz4cf   4/4     Running   0          15m
 
 (3) Make sure we are running against none mode (no filters):
 
-I got both config_dump for [1.2_config_dump](https://github.com/carolynhu/service-mesh-cmp/blob/master/istio/customer_experiment_3/1.2_50_100/1.2_config_dump.json) and [1.4_config_dump](https://github.com/carolynhu/service-mesh-cmp/blob/master/istio/customer_experiment_3/1.4_50_100/1.4_config_dump.json)
+I got both config_dump for [1.2_config_dump](https://github.com/carolynhu/service-mesh-cmp/blob/master/istio/customer_experiment_3/1.2_50_100/config_dump) and [1.4_config_dump](https://github.com/carolynhu/service-mesh-cmp/blob/master/istio/customer_experiment_3/1.4_50_100/config_dump)
 
 (4) Make sure the traffic goes through ingressgateway 
 

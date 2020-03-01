@@ -1,0 +1,123 @@
+carolynprh-macbookpro:~ carolynprh$ kubectl -n istio-system top pods -listio=ingressgateway
+NAME                                    CPU(cores)   MEMORY(bytes)
+istio-ingressgateway-7fbdb48d9d-42bfd   34m          134Mi
+istio-ingressgateway-7fbdb48d9d-4wsm9   33m          133Mi
+istio-ingressgateway-7fbdb48d9d-8l8qs   84m          135Mi
+istio-ingressgateway-7fbdb48d9d-d8p8c   59m          137Mi
+istio-ingressgateway-7fbdb48d9d-ldvqp   59m          137Mi
+istio-ingressgateway-7fbdb48d9d-q2s47   120m         136Mi
+istio-ingressgateway-7fbdb48d9d-qgt4b   191m         138Mi
+istio-ingressgateway-7fbdb48d9d-qz9lg   207m         136Mi
+istio-ingressgateway-7fbdb48d9d-wmk62   82m          138Mi
+istio-ingressgateway-7fbdb48d9d-xn9gr   189m         137Mi
+carolynprh-macbookpro:~ carolynprh$ kubectl -n istio-system top pods -listio=ingressgateway
+NAME                                    CPU(cores)   MEMORY(bytes)
+istio-ingressgateway-7fbdb48d9d-42bfd   34m          134Mi
+istio-ingressgateway-7fbdb48d9d-4wsm9   33m          133Mi
+istio-ingressgateway-7fbdb48d9d-8l8qs   84m          135Mi
+istio-ingressgateway-7fbdb48d9d-d8p8c   59m          137Mi
+istio-ingressgateway-7fbdb48d9d-ldvqp   59m          137Mi
+istio-ingressgateway-7fbdb48d9d-q2s47   120m         136Mi
+istio-ingressgateway-7fbdb48d9d-qgt4b   191m         138Mi
+istio-ingressgateway-7fbdb48d9d-qz9lg   207m         136Mi
+istio-ingressgateway-7fbdb48d9d-wmk62   82m          138Mi
+istio-ingressgateway-7fbdb48d9d-xn9gr   189m         137Mi
+carolynprh-macbookpro:~ carolynprh$ kubectl -n istio-system top pods -listio=ingressgateway
+NAME                                    CPU(cores)   MEMORY(bytes)
+istio-ingressgateway-7fbdb48d9d-42bfd   495m         135Mi
+istio-ingressgateway-7fbdb48d9d-4wsm9   440m         133Mi
+istio-ingressgateway-7fbdb48d9d-8l8qs   533m         136Mi
+istio-ingressgateway-7fbdb48d9d-d8p8c   280m         137Mi
+istio-ingressgateway-7fbdb48d9d-ldvqp   138m         137Mi
+istio-ingressgateway-7fbdb48d9d-q2s47   748m         136Mi
+istio-ingressgateway-7fbdb48d9d-qgt4b   676m         138Mi
+istio-ingressgateway-7fbdb48d9d-qz9lg   459m         136Mi
+istio-ingressgateway-7fbdb48d9d-wmk62   629m         138Mi
+istio-ingressgateway-7fbdb48d9d-xn9gr   412m         137Mi
+carolynprh-macbookpro:~ carolynprh$ kubectl top pods --containers -n twopods-istio
+POD                             NAME          CPU(cores)   MEMORY(bytes)
+fortioclient-7d4b4d9b45-6lwvl   shell         0m           1Mi
+fortioclient-7d4b4d9b45-6lwvl   captured      2529m        25Mi
+fortioclient-7d4b4d9b45-6lwvl   uncaptured    1m           3Mi
+fortioclient-7d4b4d9b45-6lwvl   istio-proxy   3m           60Mi
+fortioserver-5fd8b9c87f-4vqq2   uncaptured    0m           4Mi
+fortioserver-5fd8b9c87f-4vqq2   captured      264m         12Mi
+fortioserver-5fd8b9c87f-4vqq2   istio-proxy   244m         70Mi
+fortioserver-5fd8b9c87f-4vqq2   shell         0m           0Mi
+fortioserver-5fd8b9c87f-59flv   istio-proxy   246m         68Mi
+fortioserver-5fd8b9c87f-59flv   captured      233m         11Mi
+fortioserver-5fd8b9c87f-59flv   uncaptured    1m           3Mi
+fortioserver-5fd8b9c87f-59flv   shell         0m           1Mi
+fortioserver-5fd8b9c87f-7vdct   captured      259m         11Mi
+fortioserver-5fd8b9c87f-7vdct   shell         0m           0Mi
+fortioserver-5fd8b9c87f-7vdct   uncaptured    1m           3Mi
+fortioserver-5fd8b9c87f-7vdct   istio-proxy   254m         68Mi
+fortioserver-5fd8b9c87f-89b9h   shell         0m           0Mi
+fortioserver-5fd8b9c87f-89b9h   uncaptured    1m           3Mi
+fortioserver-5fd8b9c87f-89b9h   istio-proxy   261m         68Mi
+fortioserver-5fd8b9c87f-89b9h   captured      241m         11Mi
+fortioserver-5fd8b9c87f-8vbzl   captured      256m         12Mi
+fortioserver-5fd8b9c87f-8vbzl   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-8vbzl   istio-proxy   252m         68Mi
+fortioserver-5fd8b9c87f-8vbzl   shell         0m           1Mi
+fortioserver-5fd8b9c87f-8w8pf   istio-proxy   245m         67Mi
+fortioserver-5fd8b9c87f-8w8pf   captured      242m         11Mi
+fortioserver-5fd8b9c87f-8w8pf   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-8w8pf   shell         0m           1Mi
+fortioserver-5fd8b9c87f-cd7kr   captured      265m         11Mi
+fortioserver-5fd8b9c87f-cd7kr   istio-proxy   265m         68Mi
+fortioserver-5fd8b9c87f-cd7kr   uncaptured    1m           3Mi
+fortioserver-5fd8b9c87f-cd7kr   shell         0m           1Mi
+fortioserver-5fd8b9c87f-d6gr2   shell         0m           1Mi
+fortioserver-5fd8b9c87f-d6gr2   captured      255m         11Mi
+fortioserver-5fd8b9c87f-d6gr2   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-d6gr2   istio-proxy   244m         68Mi
+fortioserver-5fd8b9c87f-hbnvh   shell         0m           1Mi
+fortioserver-5fd8b9c87f-hbnvh   uncaptured    0m           4Mi
+fortioserver-5fd8b9c87f-hbnvh   istio-proxy   249m         68Mi
+fortioserver-5fd8b9c87f-hbnvh   captured      264m         11Mi
+fortioserver-5fd8b9c87f-kd5t5   uncaptured    1m           4Mi
+fortioserver-5fd8b9c87f-kd5t5   captured      229m         11Mi
+fortioserver-5fd8b9c87f-kd5t5   shell         0m           0Mi
+fortioserver-5fd8b9c87f-kd5t5   istio-proxy   247m         68Mi
+fortioserver-5fd8b9c87f-kl7nk   captured      252m         12Mi
+fortioserver-5fd8b9c87f-kl7nk   istio-proxy   252m         68Mi
+fortioserver-5fd8b9c87f-kl7nk   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-kl7nk   shell         0m           0Mi
+fortioserver-5fd8b9c87f-lcpl5   shell         0m           0Mi
+fortioserver-5fd8b9c87f-lcpl5   istio-proxy   240m         68Mi
+fortioserver-5fd8b9c87f-lcpl5   captured      253m         11Mi
+fortioserver-5fd8b9c87f-lcpl5   uncaptured    1m           3Mi
+fortioserver-5fd8b9c87f-lwj4f   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-lwj4f   captured      259m         11Mi
+fortioserver-5fd8b9c87f-lwj4f   shell         0m           0Mi
+fortioserver-5fd8b9c87f-lwj4f   istio-proxy   246m         67Mi
+fortioserver-5fd8b9c87f-mzvlg   shell         0m           0Mi
+fortioserver-5fd8b9c87f-mzvlg   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-mzvlg   istio-proxy   254m         68Mi
+fortioserver-5fd8b9c87f-mzvlg   captured      274m         11Mi
+fortioserver-5fd8b9c87f-nzj7c   uncaptured    1m           3Mi
+fortioserver-5fd8b9c87f-nzj7c   captured      276m         11Mi
+fortioserver-5fd8b9c87f-nzj7c   istio-proxy   259m         68Mi
+fortioserver-5fd8b9c87f-nzj7c   shell         0m           1Mi
+fortioserver-5fd8b9c87f-qcvn6   captured      242m         11Mi
+fortioserver-5fd8b9c87f-qcvn6   shell         0m           0Mi
+fortioserver-5fd8b9c87f-qcvn6   istio-proxy   250m         68Mi
+fortioserver-5fd8b9c87f-qcvn6   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-qpklw   shell         0m           0Mi
+fortioserver-5fd8b9c87f-qpklw   uncaptured    1m           3Mi
+fortioserver-5fd8b9c87f-qpklw   istio-proxy   254m         68Mi
+fortioserver-5fd8b9c87f-qpklw   captured      255m         11Mi
+fortioserver-5fd8b9c87f-rkf2d   uncaptured    1m           3Mi
+fortioserver-5fd8b9c87f-rkf2d   captured      241m         11Mi
+fortioserver-5fd8b9c87f-rkf2d   shell         0m           0Mi
+fortioserver-5fd8b9c87f-rkf2d   istio-proxy   255m         67Mi
+fortioserver-5fd8b9c87f-s49s8   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-s49s8   shell         0m           1Mi
+fortioserver-5fd8b9c87f-s49s8   istio-proxy   251m         67Mi
+fortioserver-5fd8b9c87f-s49s8   captured      237m         11Mi
+fortioserver-5fd8b9c87f-xbwq6   istio-proxy   243m         67Mi
+fortioserver-5fd8b9c87f-xbwq6   uncaptured    0m           3Mi
+fortioserver-5fd8b9c87f-xbwq6   shell         0m           0Mi
+fortioserver-5fd8b9c87f-xbwq6   captured      267m         11Mi
+carolynprh-macbookpro:~ carolynprh$
