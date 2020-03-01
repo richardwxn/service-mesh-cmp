@@ -2,6 +2,7 @@
 This experiment is based on istio/tools performance benchmark with some modifications in this [commit](https://github.com/carolynhu/tools/commit/74a7738576e9740e8024831baa926767fab49f0b)
 
 ### Some important test parameters are
+
 - client side: 4 replicas
 - ingressgateway: 10
 - server side: 20 replicas
@@ -11,26 +12,36 @@ This experiment is based on istio/tools performance benchmark with some modifica
 - 1.2-latest and 1.4-latest
 
 ### Resource allocation calculation 
+
 This calculation is based on our istio-install yaml and fortio-deployment yaml:
-CPU: 
-(client 4 + server 20) * 100m 
-+ deployment (2000m) * 2
+
+#### CPU requested
+
+(client 1 + server 20) * 100m 
++ deployment (5000m) * 2
 + ingress 5000 * 10
 + pilot 4000m
 + mixer 3800m
-= 2400 + 4000 + 50000 + 4000 + 3800 
-= 65200 m = 65.200 cpu
+= 2100 + 10000 + 50000 + 4000 + 3800 
+= 69900 m = 69.900 cpu
 
-Memory:
-(client 4 + server 20) * 128Mi 
+#### Memory requested
+
+(client 1 + server 20) * 128Mi 
 + deployment (1000Mi) * 2
 + ingress 200Mi * 10
 + pilot 2000Mi
 + mixer 4000Mi
-= 3072 + 2000 + 2000 + 2000 + 4000 
-= 13072Mi = 13.072Gi
+= 2688 + 2000 + 2000 + 2000 + 4000 
+= 12688Mi = 12.688 Gi
+
+#### Test Cluster 
+
+Both the 1.2 and 1.4 tests are running agains the cluster with 3 n1-highcpu-96	machine-type nodes and gke-version: 1.14.10-gke.17	
+
 
 ### Verifications
+
 During the tests, I did some verifications
 
 (1) Make sure we have 10 ingressgateways up and running:
@@ -96,7 +107,7 @@ fortioserver-5fd8b9c87f-sz4cf   4/4     Running   0          15m
 
 (3) Make sure we are running against none mode (no filters):
 
-I got both config_dump for [1.2_config_dump](https://github.com/carolynhu/service-mesh-cmp/blob/master/istio/customer_experiment_3/1.2_50_100/config_dump) and [1.4_config_dump](https://github.com/carolynhu/service-mesh-cmp/blob/master/istio/customer_experiment_3/1.4_50_100/config_dump)
+I got both config_dump for [1.2_config_dump](https://github.com/carolynhu/service-mesh-cmp/blob/master/istio/customer_experiment_3/1.2_50_100/config_dump) and [1.4_config_dump](https://github.com/carolynhu/service-mesh-cmp/tree/master/istio/customer_experiment_3/1.4_50_100/config_dump)
 
 (4) Make sure the traffic goes through ingressgateway 
 
@@ -117,7 +128,13 @@ istio-ingressgateway-559f8bc464-rjr9m   32m          172Mi
 istio-ingressgateway-559f8bc464-x56wv   34m          164Mi
 ```
 
-When running ingress mode test: [cpu usages inspection](https://github.com/carolynhu/service-mesh-cmp/blob/master/istio/customer_experiment_3/ingress_cpu_usages_inspection.txt)
+When running ingress mode test: [cpu usages inspection](https://github.com/carolynhu/service-mesh-cmp/tree/master/istio/customer_experiment_3/cpu_usage_ingress_mode)
+
+Through inspecting cpu utilizations, we identified that the traffic flow is correct:
+
+```
+captured client —> ingress —> server sidecar —> server
+```
 
 ### Run benchmark test for none_ingress mode
 
